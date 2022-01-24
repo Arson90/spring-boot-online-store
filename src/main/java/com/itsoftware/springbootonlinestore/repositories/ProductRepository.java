@@ -1,4 +1,9 @@
 package com.itsoftware.springbootonlinestore.repositories;
 
-public interface ProductRepository {
+import com.itsoftware.springbootonlinestore.beans.Product;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface ProductRepository extends CrudRepository<Product, Long> {
 }
