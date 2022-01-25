@@ -19,12 +19,16 @@ public class User {
     private String lastName;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
-    public User(String username, String password, String firstName, String lastName, Role role) {
+    public User(String username, String password, String firstName, String lastName, Role role, Cart cart) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.role = role;
+        this.cart = cart;
     }
 }
